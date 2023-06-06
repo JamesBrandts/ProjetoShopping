@@ -46,7 +46,7 @@ public class Principal {
             int ano = Integer.parseInt(fundacaoArray[2]);
             Data fundacao = new Data(dia, mes, ano);
 
-            Loja novaLoja = new Loja(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, fundacao, null);
+            Loja novaLoja = new Loja(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, fundacao);
             System.out.println(novaLoja);
 
         } else if (numeroEscolhido == 2) {

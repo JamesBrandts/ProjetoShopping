@@ -19,7 +19,7 @@ public class Loja {
         
     }
     
-    public Loja(int quantidadeFuncionarios, String nome, double salarioBaseFuncionario, Endereco endereco,
+    public Loja( String nome,int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
     Data fundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
