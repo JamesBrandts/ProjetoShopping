@@ -5,7 +5,7 @@ public class Bijuteria extends Loja {
 
     Bijuteria (String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data fundacao,
     double metaVendas) {
-        super (nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, fundacao, null);
+        super (nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, fundacao);
         this.metaVendas = metaVendas;
     }
 
