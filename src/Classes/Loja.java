@@ -23,7 +23,7 @@ public class Loja {
     Data fundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
-        salarioBaseFuncionario = -1;
+        this.salarioBaseFuncionario = salarioBaseFuncionario;
         this.endereco = endereco;
         this.fundacao = fundacao;
     }
@@ -125,7 +125,7 @@ public class Loja {
     public String toString() {
         return "INFORMAÇÕES DA LOJA :\n Nome da Loja: " + this.nome + "\n Quantidade de Funcionarios: "
                 + this.quantidadeFuncionarios +
-                "\n Salario base dos funcionários: " + this.salarioBaseFuncionario + "\n Endereço: " + this.endereco +
+                "\n Salario base dos funcionários: R$ " + this.salarioBaseFuncionario + "\n Endereço: " + this.endereco +
                 "\n Data de fundaçã: " + this.fundacao + "\n Produtos em estoque: " + this.estoqueProdutos;
     }
 }
