@@ -7,7 +7,27 @@ public class Loja {
     public Endereco endereco;
     public Data fundacao;
     public Produto[] estoqueProdutos;
-    
+
+    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco,
+            Data fundacao, int quantidateEstoque) {
+        this.nome = nome;
+        this.quantidadeFuncionarios = quantidadeFuncionarios;
+        this.salarioBaseFuncionario = -1;
+        this.endereco = endereco;
+        this.fundacao = fundacao;
+        this.estoqueProdutos = new Produto[quantidateEstoque];
+    }
+
+    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
+            Data fundacao, int quantidateEstoque) {
+        this.nome = nome;
+        this.quantidadeFuncionarios = quantidadeFuncionarios;
+        this.salarioBaseFuncionario = salarioBaseFuncionario;
+        this.endereco = endereco;
+        this.fundacao = fundacao;
+        this.estoqueProdutos = new Produto[quantidateEstoque];
+    }
+
     public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
             Data fundacao, Produto[] estoqueProdutos, int tamanhoEstoque) {
         this.nome = nome;
@@ -15,23 +35,23 @@ public class Loja {
         this.salarioBaseFuncionario = salarioBaseFuncionario;
         this.endereco = endereco;
         this.fundacao = fundacao;
-        this.estoqueProdutos = new Produto [tamanhoEstoque];
-        
+        this.estoqueProdutos = new Produto[tamanhoEstoque];
+
     }
-    
-    public Loja( String nome,int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
-    Data fundacao) {
+
+    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
+            Data fundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
         this.endereco = endereco;
         this.fundacao = fundacao;
     }
-    
-    public void TamanhoEstoque (int tamanho) {
+
+    public void TamanhoEstoque(int tamanho) {
         this.estoqueProdutos = new Produto[tamanho];
     }
-    
+
     public String getNome() {
         return nome;
     }
@@ -48,7 +68,7 @@ public class Loja {
         return endereco;
     }
 
-    public Data getFundacao() {
+    public Data getDataFundacao() {
         return fundacao;
     }
 
@@ -72,7 +92,7 @@ public class Loja {
         this.endereco = endereco;
     }
 
-    public void setFundacao(Data fundacao) {
+    public void setDataFundacao(Data fundacao) {
         this.fundacao = fundacao;
     }
 
@@ -112,20 +132,21 @@ public class Loja {
         return false;
     }
 
-    public boolean removeProduto (String nomeProduto) {
-       for (int i = 0; i < this.estoqueProdutos.length; i++) {
+    public boolean removeProduto(String nomeProduto) {
+        for (int i = 0; i < this.estoqueProdutos.length; i++) {
             if (this.estoqueProdutos[i].getNome() == nomeProduto) {
                 this.estoqueProdutos[i] = null;
                 return true;
-            }      
-       }
-       return false;
+            }
+        }
+        return false;
     }
 
     public String toString() {
         return "INFORMAÇÕES DA LOJA :\n Nome da Loja: " + this.nome + "\n Quantidade de Funcionarios: "
                 + this.quantidadeFuncionarios +
-                "\n Salario base dos funcionários: R$ " + this.salarioBaseFuncionario + "\n Endereço: " + this.endereco +
+                "\n Salario base dos funcionários: R$ " + this.salarioBaseFuncionario + "\n Endereço: " + this.endereco
+                +
                 "\n Data de fundaçã: " + this.fundacao + "\n Produtos em estoque: " + this.estoqueProdutos;
     }
 }

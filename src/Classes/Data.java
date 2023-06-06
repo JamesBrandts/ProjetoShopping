@@ -50,16 +50,16 @@ public class Data {
                 return false;
         if (mes == 2 && dia > 29)
             return false;
-        if (mes == 2 && dia > 28 && !isBissexto(ano))
+        if (mes == 2 && dia > 28 && !verificaAnoBissexto(ano))
             return false;
         return true;
     }
 
-    public boolean isBissexto(){
-        return isBissexto(this.ano);
+    public boolean verificaAnoBissexto(){
+        return verificaAnoBissexto(this.ano);
     }
 
-    public boolean isBissexto(int ano) {
+    public boolean verificaAnoBissexto(int ano) {
         if (ano % 400 == 0)
             return true;
         if (ano % 100 == 0)

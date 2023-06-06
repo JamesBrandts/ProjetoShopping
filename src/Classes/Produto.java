@@ -21,7 +21,7 @@ public class Produto {
         return preco;
     }
 
-    public Data getValidade() {
+    public Data getDataValidade() {
         return validade;
     }
 
@@ -33,7 +33,7 @@ public class Produto {
         this.preco = preco;
     }
 
-    public void setValidade(Data validade) {
+    public void setDataValidade(Data validade) {
         this.validade = validade;
     }
 
