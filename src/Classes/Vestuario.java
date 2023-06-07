@@ -3,9 +3,9 @@ package Classes;
 public class Vestuario extends Loja {
     boolean produtosimportados;
 
-    Vestuario (String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data fundacao,
+    public Vestuario (String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data fundacao,
     boolean produtosimportados) {
-        super(quantidadeFuncionarios, nome, salarioBaseFuncionario, endereco, fundacao);
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, fundacao);
         this.produtosimportados = produtosimportados;
     }
 
@@ -21,6 +21,6 @@ public class Vestuario extends Loja {
         return "INFORMAÇÕES DA LOJA :\n Nome da Loja: " + this.nome + "\n Quantidade de Funcionarios: "
         + this.quantidadeFuncionarios +
         "\n Salario base dos funcionários: " + this.salarioBaseFuncionario + "\n Endereço: " + this.endereco +
-        "\n Data de fundaçã: " + this.fundacao + "\n Vende produtos importados? " + produtosimportados;
+        "\n Data de fundaçã: " + this.dataFundacao + "\n Vende produtos importados? " + produtosimportados;
     }
 }

@@ -5,12 +5,12 @@ public class Produto {
 
     String nomeProduto;
     double preco;
-    Data validade;
+    Data dataValidade;
 
-    public Produto(String nomeProduto, double preco, Data validade) {
+    public Produto(String nomeProduto, double preco, Data dataValidade) {
         this.nomeProduto = nomeProduto;
         this.preco = preco;
-        this.validade = validade;
+        this.dataValidade = dataValidade;
     }
 
     public String getNome() {
@@ -21,8 +21,8 @@ public class Produto {
         return preco;
     }
 
-    public Data getValidade() {
-        return validade;
+    public Data getDataValidade() {
+        return dataValidade;
     }
 
     public void setNome(String nome) {
@@ -33,26 +33,26 @@ public class Produto {
         this.preco = preco;
     }
 
-    public void setValidade(Data validade) {
-        this.validade = validade;
+    public void setDataValidade(Data dataValidade) {
+        this.dataValidade = dataValidade;
     }
 
-    public boolean estaVencido(Data validade) {
-
-        if (validade.getAno() > 2023) {
-            System.out.println("Produto está vencido");
-        } else if (validade.getMes() >= 10) {
-            System.out.println("Produto está vencido");
-        } else if (validade.getDia() >= 23) {
-            System.out.println("Produto está vencido");
-        } else {
-            System.out.println("Produto dentro da validade.");
+    public boolean estaVencido(Data producaoProduto) {
+        if (dataValidade != null) {
+            if (producaoProduto.getAno() > dataValidade.getAno()) {
+                return true;
+            } else if (producaoProduto.getAno() == dataValidade.getAno() && producaoProduto.getMes() > dataValidade.getMes()) {
+                return true;
+            } else if (producaoProduto.getMes() == producaoProduto.getMes() && producaoProduto.getDia() > dataValidade.getDia()) {
+                return true;
+            }
         }
         return false;
+        
     }
 
     public String toString() {
         return "INFORMAÇÕES DO PRODUTO:\n Nome do produto: " + this.nomeProduto + "\n Preço: " + this.preco
-                + "Validade: " + this.validade;
+                + "Validade: " + this.dataValidade;
     }
 }

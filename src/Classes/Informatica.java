@@ -3,9 +3,9 @@ package Classes;
 public class Informatica extends Loja{
     double seguroEletronicos;
 
-    Informatica (String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data fundacao,
+    public Informatica (String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data fundacao,
     double seguroEletronicos) {
-        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, fundacao, null);
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, fundacao);
         this.seguroEletronicos = seguroEletronicos;
     }
 
@@ -21,7 +21,7 @@ public class Informatica extends Loja{
         return "INFORMAÇÕES DA LOJA :\n Nome da Loja: " + this.nome + "\n Quantidade de Funcionarios: "
         + this.quantidadeFuncionarios +
         "\n Salario base dos funcionários: " + this.salarioBaseFuncionario + "\n Endereço: " + this.endereco +
-        "\n Data de fundaçã: " + this.fundacao + "\n Seguro dos eletronicos: " + seguroEletronicos;
+        "\n Data de fundaçã: " + this.dataFundacao + "\n Seguro dos eletronicos: " + seguroEletronicos;
     }
 
 }

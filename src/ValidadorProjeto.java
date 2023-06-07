@@ -10,7 +10,7 @@ import Classes.Shopping;
 import Classes.Vestuario;
 
 
-public class ValidadorEtapa4 {
+public class ValidadorProjeto {
 
 	public static void main(String[] args){
 		System.out.println("[Laboratório I]\n Desafio: Validador - Etapa 04\n");
@@ -142,7 +142,7 @@ public class ValidadorEtapa4 {
 
 		
 		//// Verificação da classe Loja
-		Loja loja1 = new Loja ("E3", 5, 0, e1, d1, 5);
+		Loja loja1 = new Loja ("E3", 5, e1, d1, 5);
 		System.out.println("\n[OK] Classe Loja identificada (construtor com cinco parâmetros)");
 		
 		Loja loja2 = new Loja ("E7", 20, 2000, e1, d1, 2);
@@ -220,7 +220,7 @@ public class ValidadorEtapa4 {
 
 		//// Verificação da classe Cosmetico
 		//Criação da instância
-		Cosmetico lojaCosmetico = new Cosmetico("Loja Cosmético", 10, 2100, e1, d1, 20);
+		Cosmetico lojaCosmetico = new Cosmetico("Loja Cosmético", 10, 2100, e1, d1, 20, 10);
 		System.out.println("\n[OK] Classe Cosmetico identificada");
 		
 		//public void setTaxaComercializacao(double taxaComercializacao)
@@ -236,7 +236,7 @@ public class ValidadorEtapa4 {
 		
 		//// Verificação da classe Vestuario
 		//Criação da instância
-		Vestuario lojaVestuario = new Vestuario("Loja Vestuário", 10, 2100, e1, d1, false);
+		Vestuario lojaVestuario = new Vestuario("Loja Vestuário", 10, 2100, e1, d1, false, 10);
 		System.out.println("\n[OK] Classe Vestuario identificada");
 		
 		//public void setProdutosImportados(boolean produtosImportados)
@@ -252,7 +252,7 @@ public class ValidadorEtapa4 {
 		
 		//// Verificação da classe Bijuteria
 		//Criação da instância
-		Bijuteria lojaBijuteria = new Bijuteria("Loja Bijuteria", 10, 2100, e1, d1, 5000);
+		Bijuteria lojaBijuteria = new Bijuteria("Loja Bijuteria", 10, 2100, e1, d1, 5000, 10);
 		System.out.println("\n[OK] Classe Bijuteria identificada");
 		
 		//public void setMetaVendas(double metaVendas)
@@ -268,7 +268,7 @@ public class ValidadorEtapa4 {
 		
 		//// Verificação da classe Alimentacao
 		//Criação da instância
-		Alimentacao lojaAlimentacao = new Alimentacao("Loja Alimentação", 10, 2100, e1, d1, d1);
+		Alimentacao lojaAlimentacao = new Alimentacao("Loja Alimentação", 10, 2100, e1, d1, d1, 10);
 		System.out.println("\n[OK] Classe Alimentacao identificada");
 
 		//public void setDataAlvara(Data dataAlvara)
@@ -284,7 +284,7 @@ public class ValidadorEtapa4 {
 		
 		//// Verificação da classe Informatica
 		//Criação da instância
-		Informatica lojaInformatica = new Informatica("Loja Informática", 10, 2100, e1, d1, 300);
+		Informatica lojaInformatica = new Informatica("Loja Informática", 10, 2100, e1, d1, 300, 10);
 		System.out.println("\n[OK] Classe Informatica identificada");
 		
 		//public void setSeguroEletronicos(double seguroEletronicos)
@@ -349,8 +349,8 @@ public class ValidadorEtapa4 {
 		System.out.println(total == 2 ? "[OK] Método Shopping.quantidadeLojasPorTipo() - localizou duas lojas" : "[NOK] Método Shopping.quantidadeLojasPorTipo() - não conseguiu localizar as lojas");
 
 		//public Informatica lojaSeguroMaisCaro()
-		//Informatica maisCaro = shopping.lojaSeguroMaisCaro();
-		//System.out.println(maisCaro.getSeguroEletronicos() == 800 ? "[OK] Método Shopping.lojaSeguroMaisCaro()" : "[NOK] Método Shopping.lojaSeguroMaisCaro");
+		Informatica maisCaro = shopping.lojaSeguroMaisCaro();
+		System.out.println(maisCaro.getSeguroEletronicos() == 800 ? "[OK] Método Shopping.lojaSeguroMaisCaro()" : "[NOK] Método Shopping.lojaSeguroMaisCaro");
 
 	}
 }

@@ -31,11 +31,12 @@ public class Principal {
             String[] enderecoArray = enderecoString.split(",");
             String nomeDaRua = (enderecoArray[0]);
             String cidade = (enderecoArray[1]);
-            String pais = (enderecoArray[2]);
-            String cep = (enderecoArray[3]);
-            String numero = (enderecoArray[4]);
-            String complemento = (enderecoArray[5]);
-            Endereco endereco = new Endereco(nomeDaRua, cidade, pais, cep, numero, complemento);
+            String estado = (enderecoArray[2]);
+            String pais = (enderecoArray[3]);
+            String cep = (enderecoArray[4]);
+            String numero = (enderecoArray[5]);
+            String complemento = (enderecoArray[6]);
+            Endereco endereco = new Endereco(nomeDaRua, cidade, estado, pais, cep, numero, complemento);
 
             System.out.println("Digite a data de fundação da loja em formato dd/mm/aaaa");
             String fundacaoString = sc.next();
@@ -45,7 +46,7 @@ public class Principal {
             int ano = Integer.parseInt(fundacaoArray[2]);
             Data fundacao = new Data(dia, mes, ano);
 
-            Loja novaLoja = new Loja(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, fundacao, null);
+            Loja novaLoja = new Loja(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, fundacao);
             System.out.println(novaLoja);
 
         } else if (numeroEscolhido == 2) {
