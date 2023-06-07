@@ -71,12 +71,25 @@ public class Shopping {
         }
         int quantidade = 0;
         for (int i = 0; i < this.lojas.length; i++) {
-            if (this.lojas[i] != null && tipoDeLoja.equals(this.lojas[i].getClass().getSimpleName())) {
+            if (this.lojas[i] != null && this.lojas[i].getClass().getSimpleName() == tipoDeLoja) {
                 quantidade++;
             }
         }
 
         return quantidade;
+    }
+
+    public Informatica lojaSeguroMaisCaro() {
+        Informatica lojaSeguroMaisCaro = null;
+        for (int i = 0; i < this.lojas.length; i++) {
+            if (this.lojas[i] != null && this.lojas[i] instanceof Informatica) {
+                Informatica lojaInformatica = (Informatica) this.lojas[i];
+                if (lojaInformatica.getSeguroEletronicos() > lojaSeguroMaisCaro.getSeguroEletronicos()) {
+                    lojaSeguroMaisCaro = lojaInformatica;
+                }
+            }
+        }
+        return lojaSeguroMaisCaro;
     }
 
     public String toString() {
