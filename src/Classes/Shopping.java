@@ -51,7 +51,7 @@ public class Shopping {
 
     public boolean removeLoja(String nomeDaloja) {
         for (int i = 0; i < this.lojas.length; i++) {
-            if (this.lojas[0].getNome() == nomeDaloja) {
+            if (this.lojas[i] != null && this.lojas[i].getNome() == nomeDaloja) {
                 this.lojas[i] = null;
                 return true;
             }
@@ -76,7 +76,24 @@ public class Shopping {
         return quantidade;
     }
 
+    public Informatica lojaSeguroMaisCaro() {
+        Informatica lojaSeguroMaisCaro = null;
+        for (int i = 0; i < this.lojas.length; i++) {
+            if (this.lojas[i] != null && this.lojas[i] instanceof Informatica) {
+                Informatica lojaInformatica = (Informatica) this.lojas[i];
+                if (lojaSeguroMaisCaro == null) {
+                    lojaSeguroMaisCaro = lojaInformatica;
+                }
+                if (lojaInformatica.getSeguroEletronicos() > lojaSeguroMaisCaro.getSeguroEletronicos()) {
+                    lojaSeguroMaisCaro = lojaInformatica;
+                }
+            }
+        }
+        return lojaSeguroMaisCaro;
+    }
+
     public String toString() {
         return "Nome do Shopping: " + this.nome + "\nEndereço: " + this.endereco + "\nLojas do shopping: " + this.lojas;
     }
+
 }
